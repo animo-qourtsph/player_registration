@@ -1,0 +1,38 @@
+ANIMO PICKLEBALL CUP 2026
+PLAYER REGISTRATION 1.4.6 — COMPACT DIVISION AVAILABILITY
+Production package QA
+
+BASELINE
+PASS — Rebuilt from Animo Player Registration Production 1.4.5 Production OTP Gate.
+PASS — Existing second-entry / returning-player UI preserved.
+PASS — Existing partner email OTP flow preserved.
+PASS — Existing server-authoritative pricing preflight preserved.
+PASS — Existing higher-level partner placement and gender category assignment preserved.
+PASS — Existing full-division payment guard preserved.
+PASS — API contract remains 2026.09.14.1.
+PASS — Required schema version remains 2026.09.14.1.
+
+COMPACT AVAILABILITY
+PASS — Availability remains inside the Registration view above the original registration wizard.
+PASS — Grouped by Beginner, Low Intermediate, High Intermediate, and Advanced.
+PASS — Each level shows Men's Doubles, Women's Doubles, and Mixed Doubles.
+PASS — Public availability rows render status only; no Confirmed / Under Review / remaining-slot / capacity totals are rendered by the active availability UI.
+PASS — Full and Not Offered rows are visually muted.
+PASS — Desktop uses four compact level cards.
+PASS — Tablet uses two columns.
+PASS — Mobile uses horizontally scrollable compact level cards instead of the previous long dashboard.
+PASS — No pre-registration hold, no temporary slot reservation, and no separate availability gate were added.
+PASS — Original registration flow remains immediately below the compact availability summary.
+
+INTEGRITY / STATIC QA
+PASS — Duplicate HTML IDs: 0.
+PASS — Missing local resources: 0.
+PASS — Inline JavaScript block 1: node --check PASS.
+PASS — Inline JavaScript block 2: node --check PASS.
+PASS — PLAYER_BUILD = production-1.4.6-compact-division-availability.
+PASS — PLAYER_DARK_LAUNCH remains false.
+PASS — Controlled-test live submission remains disabled.
+
+DEPLOYMENT
+Frontend-only release. No SQL migration or Registration API replacement is required for the compact availability change.
+Designed for the currently deployed Registration API 2.3.7 and the existing 2026.09.14.1 contract/schema compatibility.

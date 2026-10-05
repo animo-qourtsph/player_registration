@@ -1,0 +1,29 @@
+Animo Player Registration Production 1.4.7 — Fast Compact Availability
+
+SOURCE
+PASS — Built from Production 1.4.6 Compact Availability, itself based on Production 1.4.5 Universal Partner OTP Gate.
+
+PERFORMANCE
+PASS — public portal-state starts immediately instead of waiting for backend health.
+PASS — backend health runs in parallel and is still retained for protected flows.
+PASS — duplicate in-flight portal-state requests are coalesced.
+PASS — short-lived availability cache uses a maximum age of 2 minutes.
+PASS — cached state is labelled Updating availability and is revalidated from the live backend.
+
+UI / PRIVACY
+PASS — compact division availability remains status-only.
+PASS — Available / Full / Not Offered states retained.
+PASS — no public team counts, capacity figures, or remaining-slot figures added.
+PASS — original registration flow remains directly below the availability strip.
+
+REGRESSION PROTECTION
+PASS — Universal Partner OTP Gate code remains present.
+PASS — returning-player / second-entry flow remains present.
+PASS — server-authoritative registration and pricing path remains unchanged.
+PASS — no SQL or Registration API change required by this release.
+
+STATIC VALIDATION
+PASS — all inline JavaScript blocks pass node --check.
+PASS — duplicate static HTML IDs: 0.
+PASS — missing local HTML resources: 0.
+PASS — fast-availability hooks present.
